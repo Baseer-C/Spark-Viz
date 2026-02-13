@@ -102,7 +102,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1rem;
       max-width: 1400px;
     }
@@ -161,6 +161,21 @@
     .worker-metric .label { font-size: 0.7rem; color: var(--muted); }
     .worker-metric.completed .value { color: var(--completed); }
     .worker-metric.slots .value { color: var(--accent); }
+    .worker-metric.memory .value { font-size: 1rem; }
+    .worker-memory-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .worker-memory-bar-fill {
+      height: 100%;
+      background: var(--running);
+      border-radius: 3px;
+      transition: width 0.2s;
+    }
+    .worker-memory-bar-fill.full { background: var(--failed); }
 
     .tasks-section { margin-bottom: 0.5rem; }
     .tasks-section-title { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.4rem; }
@@ -198,7 +213,7 @@
     .kill-btn:hover { background: var(--kill-hover); }
     .kill-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    .run-job-section {
+    .run-job-section, .add-node-section {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -206,6 +221,24 @@
       margin-bottom: 1.5rem;
       max-width: 1400px;
     }
+    .add-node-section h2 { margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600; }
+    .add-node-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1rem; }
+    .add-node-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      background: var(--completed);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .add-node-btn:hover { background: #16a34a; }
+    .add-node-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .add-node-msg { font-size: 0.85rem; margin-top: 0.5rem; min-height: 1.2em; }
+    .add-node-msg.success { color: var(--completed); }
+    .add-node-msg.error { color: var(--failed); }
     .run-job-section h2 {
       margin: 0 0 1rem 0;
       font-size: 1.1rem;
@@ -370,6 +403,10 @@
       <div class="stat-label">Slots (free / total)</div>
       <div class="stat-value" id="slots">0 / 0</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-label">Memory (used / total MB)</div>
+      <div class="stat-value" id="memory">0 / 0</div>
+    </div>
   </div>
 
   <div class="legend">
@@ -398,6 +435,10 @@
         <label for="taskDurationMs">Task duration (ms)</label>
         <input type="number" id="taskDurationMs" min="100" max="30000" value="1000">
       </div>
+      <div class="form-group">
+        <label for="taskMemoryMb">Task memory (MB)</label>
+        <input type="number" id="taskMemoryMb" min="0" max="100000" value="0" title="Memory each task uses while running (0 = no limit)">
+      </div>
       <div class="form-group form-group-checkbox">
         <label class="checkbox-label">
           <input type="checkbox" id="simulateDataSkew" name="simulateDataSkew">
@@ -408,6 +449,26 @@
       <button type="submit" class="run-job-btn" id="runJobBtn">Run job</button>
     </form>
     <p id="runJobMsg" class="run-job-msg"></p>
+  </div>
+
+  <div class="add-node-section">
+    <h2>Add node</h2>
+    <form class="add-node-form" id="addNodeForm">
+      <div class="form-group">
+        <label for="nodeHostname">Hostname</label>
+        <input type="text" id="nodeHostname" placeholder="worker-5" value="">
+      </div>
+      <div class="form-group">
+        <label for="nodeSlots">Slots</label>
+        <input type="number" id="nodeSlots" min="1" max="64" value="4">
+      </div>
+      <div class="form-group">
+        <label for="nodeMemoryMb">Memory (MB)</label>
+        <input type="number" id="nodeMemoryMb" min="0" max="1000000" value="4096">
+      </div>
+      <button type="submit" class="add-node-btn" id="addNodeBtn">Add node</button>
+    </form>
+    <p id="addNodeMsg" class="add-node-msg"></p>
   </div>
 
   <div class="grid" id="workerGrid"></div>
@@ -432,8 +493,10 @@
     const runningTasksEl = document.getElementById('runningTasks');
     const totalJobsEl = document.getElementById('totalJobs');
     const slotsEl = document.getElementById('slots');
+    const memoryEl = document.getElementById('memory');
     const dagDiagramEl = document.getElementById('dagDiagram');
     const runJobMsgEl = document.getElementById('runJobMsg');
+    const addNodeMsgEl = document.getElementById('addNodeMsg');
 
     let previousCompletedByWorker = {};
 
@@ -466,62 +529,53 @@
       runningTasksEl.textContent = state.runningTasks ?? 0;
       totalJobsEl.textContent = state.totalJobs ?? 0;
       slotsEl.textContent = (state.availableSlots ?? 0) + ' / ' + (state.totalSlots ?? 0);
+      const totalMem = state.totalMemoryMb ?? 0;
+      const usedMem = state.usedMemoryMb ?? 0;
+      memoryEl.textContent = totalMem > 0 ? (usedMem + ' / ' + totalMem) : (usedMem > 0 ? usedMem + ' used' : '—');
 
       const workers = state.workers || [];
       workerGrid.innerHTML = '';
 
       renderDag(state.dag);
 
-      for (let i = 0; i < 4; i++) {
-        const worker = workers[i];
+      workers.forEach(function (worker) {
         const card = document.createElement('div');
         card.className = 'worker-card';
-        const workerId = worker ? worker.id : null;
-        const completed = worker ? worker.totalTasksExecuted : 0;
+        const workerId = worker.id;
+        const completed = worker.totalTasksExecuted;
         const prevCompleted = previousCompletedByWorker[workerId] ?? 0;
-        if (workerId && completed > prevCompleted) {
+        if (completed > prevCompleted) {
           card.classList.add('just-completed');
           previousCompletedByWorker[workerId] = completed;
         }
-        if (workerId) previousCompletedByWorker[workerId] = completed;
+        previousCompletedByWorker[workerId] = completed;
 
-        if (!worker) {
-          card.classList.add('killed');
-          card.innerHTML = `
-            <div class="worker-header"><span class="worker-name">Worker ${i + 1}</span></div>
-            <div class="worker-metrics">
-              <div class="worker-metric completed"><span class="value">—</span><span class="label">Completed</span></div>
-              <div class="worker-metric slots"><span class="value">—</span><span class="label">Slots</span></div>
-            </div>
-            <div class="tasks-section"><div class="tasks-section-title">Slots</div><div class="tasks-box"></div></div>
-            <button class="kill-btn" disabled>KILL NODE</button>
-          `;
-        } else {
-          const tasks = worker.tasks || [];
-          const taskDots = tasks.map(t =>
-            `<div class="task-dot ${t.status}" title="${(t.description || t.id).replace(/"/g, '&quot;')}"></div>`
-          ).join('');
-          card.innerHTML = `
-            <div class="worker-header">
-              <span class="worker-name">${worker.hostname}</span>
-              <span class="worker-health ${worker.health}">${worker.health}</span>
-            </div>
-            <div class="worker-metrics">
-              <div class="worker-metric completed"><span class="value">${worker.totalTasksExecuted}</span><span class="label">Tasks completed</span></div>
-              <div class="worker-metric slots"><span class="value">${worker.availableSlots}/${worker.totalSlots}</span><span class="label">Slots free</span></div>
-            </div>
-            <div class="tasks-section">
-              <div class="tasks-section-title">Current slots (running = blue, idle = gray)</div>
-              <div class="tasks-box">${taskDots}</div>
-            </div>
-            <button class="kill-btn" data-worker-id="${worker.id}">KILL NODE</button>
-          `;
-          card.querySelector('.kill-btn').addEventListener('click', function () {
-            killWorker(worker.id, this);
-          });
-        }
+        const tasks = worker.tasks || [];
+        const taskDots = tasks.map(function (t) {
+          return '<div class="task-dot ' + t.status + '" title="' + (t.description || t.id).replace(/"/g, '&quot;') + '"></div>';
+        }).join('');
+        const totalMemW = worker.totalMemoryMb || 0;
+        const usedMemW = worker.usedMemoryMb || 0;
+        const memLabel = totalMemW > 0 ? (usedMemW + ' / ' + totalMemW + ' MB') : '—';
+        const memPct = totalMemW > 0 ? Math.min(100, (100 * usedMemW / totalMemW)) : 0;
+        const memBarClass = memPct >= 95 ? 'worker-memory-bar-fill full' : 'worker-memory-bar-fill';
+        card.innerHTML = '<div class="worker-header">' +
+          '<span class="worker-name">' + escapeHtml(worker.hostname) + '</span>' +
+          '<span class="worker-health ' + worker.health + '">' + worker.health + '</span>' +
+          '</div>' +
+          '<div class="worker-metrics">' +
+          '<div class="worker-metric completed"><span class="value">' + worker.totalTasksExecuted + '</span><span class="label">Tasks completed</span></div>' +
+          '<div class="worker-metric slots"><span class="value">' + worker.availableSlots + '/' + worker.totalSlots + '</span><span class="label">Slots free</span></div>' +
+          '<div class="worker-metric memory"><span class="value">' + memLabel + '</span><span class="label">Memory</span>' +
+          (totalMemW > 0 ? '<div class="worker-memory-bar"><div class="' + memBarClass + '" style="width:' + memPct + '%"></div></div>' : '') + '</div>' +
+          '</div>' +
+          '<div class="tasks-section"><div class="tasks-section-title">Current slots (running = blue, idle = gray)</div><div class="tasks-box">' + taskDots + '</div></div>' +
+          '<button class="kill-btn" data-worker-id="' + escapeHtml(worker.id) + '">KILL NODE</button>';
+        card.querySelector('.kill-btn').addEventListener('click', function () {
+          killWorker(worker.id, this);
+        });
         workerGrid.appendChild(card);
-      }
+      });
     }
 
     function killWorker(workerId, btn) {
@@ -577,6 +631,7 @@
         stages.push({ taskCount: tasksPerStage, taskDurationMs: taskDurationMs });
       }
       const simulateDataSkew = document.getElementById('simulateDataSkew').checked;
+      const taskMemoryMb = Math.max(0, parseInt(document.getElementById('taskMemoryMb').value, 10) || 0);
       const btn = document.getElementById('runJobBtn');
       runJobMsgEl.textContent = '';
       runJobMsgEl.className = 'run-job-msg';
@@ -584,7 +639,7 @@
       fetch(jobsApiBase + '/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ description: desc || undefined, stages: stages, simulateDataSkew: simulateDataSkew })
+        body: JSON.stringify({ description: desc || undefined, stages: stages, simulateDataSkew: simulateDataSkew, taskMemoryMb: taskMemoryMb })
       })
         .then(function (res) {
           return res.json().then(function (data) {
@@ -604,6 +659,39 @@
         .finally(function () {
           btn.disabled = false;
         });
+    });
+
+    document.getElementById('addNodeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const hostname = document.getElementById('nodeHostname').value.trim();
+      const slots = Math.max(1, parseInt(document.getElementById('nodeSlots').value, 10) || 4);
+      const memoryMb = Math.max(0, parseInt(document.getElementById('nodeMemoryMb').value, 10) || 4096);
+      const btn = document.getElementById('addNodeBtn');
+      addNodeMsgEl.textContent = '';
+      addNodeMsgEl.className = 'add-node-msg';
+      btn.disabled = true;
+      fetch(apiBase, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ hostname: hostname || undefined, slots: slots, memoryMb: memoryMb })
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            if (res.ok && data.success) {
+              addNodeMsgEl.textContent = 'Node added: ' + (data.hostname || data.workerId);
+              addNodeMsgEl.className = 'add-node-msg success';
+              document.getElementById('nodeHostname').value = '';
+            } else {
+              addNodeMsgEl.textContent = data.message || 'Add node failed';
+              addNodeMsgEl.className = 'add-node-msg error';
+            }
+          });
+        })
+        .catch(function () {
+          addNodeMsgEl.textContent = 'Network error';
+          addNodeMsgEl.className = 'add-node-msg error';
+        })
+        .finally(function () { btn.disabled = false; });
     });
   </script>
 </body>

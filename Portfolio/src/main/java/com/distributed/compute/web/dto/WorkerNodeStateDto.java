@@ -10,6 +10,8 @@ public record WorkerNodeStateDto(
     String hostname,
     int totalSlots,
     int availableSlots,
+    int totalMemoryMb,
+    int usedMemoryMb,
     int runningTaskCount,
     long totalTasksExecuted,
     String health,

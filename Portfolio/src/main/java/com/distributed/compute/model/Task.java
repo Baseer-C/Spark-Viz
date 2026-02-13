@@ -55,25 +55,38 @@ public class Task {
     private final String description;
     
     /**
-     * Creates a new Task with the specified duration.
-     * 
+     * Memory in MB this task uses while running (simulated).
+     * Used for scheduling: a worker must have at least this much free memory to run the task.
+     */
+    private final int memoryMb;
+    
+    /**
+     * Creates a new Task with the specified duration, description, and memory.
+     *
      * @param durationMs The duration in milliseconds this task will take to execute
      * @param description Optional description of the task
+     * @param memoryMb Memory in MB the task uses while running (0 = no memory constraint)
      */
-    public Task(long durationMs, String description) {
+    public Task(long durationMs, String description, int memoryMb) {
         this.id = UUID.randomUUID().toString();
         this.status = new AtomicReference<>(TaskStatus.PENDING);
         this.durationMs = durationMs;
         this.description = description != null ? description : "Task-" + id.substring(0, 8);
+        this.memoryMb = memoryMb >= 0 ? memoryMb : 0;
+    }
+    
+    /**
+     * Creates a new Task with the specified duration and description (no memory).
+     */
+    public Task(long durationMs, String description) {
+        this(durationMs, description, 0);
     }
     
     /**
      * Creates a new Task with the specified duration and default description.
-     * 
-     * @param durationMs The duration in milliseconds this task will take to execute
      */
     public Task(long durationMs) {
-        this(durationMs, null);
+        this(durationMs, null, 0);
     }
     
     /**
@@ -148,11 +161,20 @@ public class Task {
     
     /**
      * Gets the description of this task.
-     * 
+     *
      * @return The task description
      */
     public String getDescription() {
         return description;
+    }
+    
+    /**
+     * Gets the memory in MB this task uses while running.
+     *
+     * @return Memory in MB (0 = no constraint)
+     */
+    public int getMemoryMb() {
+        return memoryMb;
     }
     
     /**
@@ -180,7 +202,7 @@ public class Task {
     
     @Override
     public String toString() {
-        return String.format("Task{id='%s', status=%s, durationMs=%d, description='%s'}", 
-                id, status.get(), durationMs, description);
+        return String.format("Task{id='%s', status=%s, durationMs=%d, memoryMb=%d, description='%s'}", 
+                id, status.get(), durationMs, memoryMb, description);
     }
 }

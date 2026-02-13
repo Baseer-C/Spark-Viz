@@ -56,10 +56,11 @@ public class JobController {
                 stragglerTaskIndex = rng.nextInt(taskCount);
             }
 
+            int taskMemoryMb = request.taskMemoryMb() != null && request.taskMemoryMb() >= 0 ? request.taskMemoryMb() : 0;
             for (int t = 0; t < taskCount; t++) {
                 int taskDuration = (t == stragglerTaskIndex) ? stragglerTaskDurationMs : durationMs;
                 String taskDesc = (t == stragglerTaskIndex) ? "Task " + (t + 1) + " (straggler)" : "Task " + (t + 1);
-                stage.addTask(new Task(taskDuration, taskDesc));
+                stage.addTask(new Task(taskDuration, taskDesc, taskMemoryMb));
             }
             job.addStage(stage);
         }

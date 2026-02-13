@@ -36,12 +36,12 @@ public class ComputeEngineDemo implements CommandLineRunner {
         logger.info("Distributed Compute Engine Demo");
         logger.info("========================================");
 
-        // Create and register worker nodes (4 for dashboard visualization)
+        // Create and register worker nodes (4 for dashboard visualization, 4096 MB each)
         logger.info("\n1. Creating worker nodes...");
-        WorkerNode worker1 = new WorkerNode("worker-1", 4);
-        WorkerNode worker2 = new WorkerNode("worker-2", 4);
-        WorkerNode worker3 = new WorkerNode("worker-3", 4);
-        WorkerNode worker4 = new WorkerNode("worker-4", 4);
+        WorkerNode worker1 = new WorkerNode("worker-1", 4, 4096);
+        WorkerNode worker2 = new WorkerNode("worker-2", 4, 4096);
+        WorkerNode worker3 = new WorkerNode("worker-3", 4, 4096);
+        WorkerNode worker4 = new WorkerNode("worker-4", 4, 4096);
 
         clusterManager.registerWorker(worker1);
         clusterManager.registerWorker(worker2);

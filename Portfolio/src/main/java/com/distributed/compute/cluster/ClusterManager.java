@@ -422,20 +422,21 @@ public class ClusterManager {
             return;
         }
         
-        List<WorkerNode> availableWorkers = workerNodes.values().stream()
-                .filter(WorkerNode::hasAvailableSlots)
-                .collect(Collectors.toList());
-        
-        if (availableWorkers.isEmpty()) {
-            return;
-        }
-        
-        // Schedule tasks to available workers using round-robin
         int scheduled = 0;
-        while (!pendingTaskQueue.isEmpty() && !availableWorkers.isEmpty()) {
+        while (!pendingTaskQueue.isEmpty()) {
             Task task = pendingTaskQueue.poll();
             if (task == null || task.getStatus() != TaskStatus.PENDING) {
                 continue;
+            }
+            
+            List<WorkerNode> availableWorkers = workerNodes.values().stream()
+                    .filter(WorkerNode::hasAvailableSlots)
+                    .filter(w -> w.hasAvailableMemory(task.getMemoryMb()))
+                    .collect(Collectors.toList());
+            
+            if (availableWorkers.isEmpty()) {
+                pendingTaskQueue.offer(task);
+                break;
             }
             
             WorkerNode worker = selectWorker(availableWorkers);
@@ -465,14 +466,8 @@ public class ClusterManager {
                     pendingTaskQueue.offer(task);
                 }
             } catch (RejectedExecutionException e) {
-                // Worker became unavailable, re-queue task
                 pendingTaskQueue.offer(task);
             }
-            
-            // Refresh available workers list
-            availableWorkers = workerNodes.values().stream()
-                    .filter(WorkerNode::hasAvailableSlots)
-                    .collect(Collectors.toList());
         }
         
         if (scheduled > 0) {
@@ -591,6 +586,13 @@ public class ClusterManager {
         stats.put("totalJobs", jobs.size());
         stats.put("totalTasksScheduled", totalTasksScheduled.get());
         stats.put("totalJobsSubmitted", totalJobsSubmitted.get());
+        int totalMem = workerNodes.values().stream()
+                .mapToInt(WorkerNode::getTotalMemoryMb)
+                .filter(m -> m != Integer.MAX_VALUE)
+                .sum();
+        int usedMem = workerNodes.values().stream().mapToInt(WorkerNode::getUsedMemoryMb).sum();
+        stats.put("totalMemoryMb", totalMem);
+        stats.put("usedMemoryMb", usedMem);
         return stats;
     }
     

@@ -83,6 +83,17 @@ public class WorkerNode {
     private final int totalSlots;
     
     /**
+     * Total memory in MB on this node (simulated capacity).
+     * Tasks consume memory while running; scheduler checks available memory.
+     */
+    private final int totalMemoryMb;
+    
+    /**
+     * Atomic counter tracking memory in MB currently used by running tasks.
+     */
+    private final AtomicInteger usedMemoryMb;
+    
+    /**
      * Atomic counter tracking the total number of tasks executed by this node.
      * Thread-safe counter for monitoring and statistics.
      */
@@ -95,19 +106,25 @@ public class WorkerNode {
     private final AtomicLong totalExecutionTimeMs;
     
     /**
-     * Creates a new WorkerNode with the specified number of slots.
-     * 
+     * Creates a new WorkerNode with the specified number of slots and memory capacity.
+     *
      * @param hostname The hostname or identifier for this node
      * @param slots The number of concurrent execution slots (threads)
+     * @param memoryMb Total memory in MB (simulated). Use Integer.MAX_VALUE for "unlimited".
      */
-    public WorkerNode(String hostname, int slots) {
+    public WorkerNode(String hostname, int slots, int memoryMb) {
         if (slots <= 0) {
             throw new IllegalArgumentException("Number of slots must be positive");
+        }
+        if (memoryMb < 0) {
+            throw new IllegalArgumentException("Memory must be non-negative");
         }
         
         this.id = UUID.randomUUID().toString();
         this.hostname = hostname != null ? hostname : "worker-" + id.substring(0, 8);
         this.totalSlots = slots;
+        this.totalMemoryMb = memoryMb;
+        this.usedMemoryMb = new AtomicInteger(0);
         this.availableSlots = new AtomicInteger(slots);
         this.runningTasks = new ConcurrentHashMap<>();
         this.totalTasksExecuted = new AtomicLong(0);
@@ -139,7 +156,14 @@ public class WorkerNode {
                 }
         );
         
-        logger.info("WorkerNode created: {} with {} slots", hostname, slots);
+        logger.info("WorkerNode created: {} with {} slots, {} MB memory", hostname, slots, memoryMb == Integer.MAX_VALUE ? "unlimited" : memoryMb);
+    }
+    
+    /**
+     * Creates a new WorkerNode with the specified hostname and slots (unlimited memory).
+     */
+    public WorkerNode(String hostname, int slots) {
+        this(hostname, slots, Integer.MAX_VALUE);
     }
     
     /**
@@ -182,11 +206,40 @@ public class WorkerNode {
     /**
      * Checks if this node has available slots for task execution.
      * Thread-safe operation.
-     * 
+     *
      * @return true if at least one slot is available, false otherwise
      */
     public boolean hasAvailableSlots() {
         return availableSlots.get() > 0;
+    }
+    
+    /**
+     * Gets total memory in MB for this node.
+     */
+    public int getTotalMemoryMb() {
+        return totalMemoryMb;
+    }
+    
+    /**
+     * Gets memory in MB currently used by running tasks.
+     */
+    public int getUsedMemoryMb() {
+        return usedMemoryMb.get();
+    }
+    
+    /**
+     * Gets available memory in MB (total - used).
+     */
+    public int getAvailableMemoryMb() {
+        return Math.max(0, totalMemoryMb - usedMemoryMb.get());
+    }
+    
+    /**
+     * Returns true if this node has at least requiredMb of free memory.
+     */
+    public boolean hasAvailableMemory(int requiredMb) {
+        if (requiredMb <= 0) return true;
+        return totalMemoryMb == Integer.MAX_VALUE || getAvailableMemoryMb() >= requiredMb;
     }
     
     /**
@@ -219,16 +272,21 @@ public class WorkerNode {
             throw new RejectedExecutionException("Task " + task.getId() + " cannot be started - invalid status");
         }
         
+        int taskMemory = task.getMemoryMb();
+        if (!hasAvailableMemory(taskMemory)) {
+            task.updateStatus(TaskStatus.RUNNING, TaskStatus.PENDING);
+            throw new RejectedExecutionException("Insufficient memory on " + hostname + " (need " + taskMemory + " MB)");
+        }
+        
         // Decrement available slots atomically
         int currentSlots = availableSlots.getAndDecrement();
         if (currentSlots <= 0) {
-            // Rollback the decrement if no slots available
             availableSlots.incrementAndGet();
             task.updateStatus(TaskStatus.RUNNING, TaskStatus.PENDING);
             throw new RejectedExecutionException("No available slots on " + hostname);
         }
         
-        // Add to running tasks map
+        usedMemoryMb.addAndGet(taskMemory);
         runningTasks.put(task.getId(), task);
         
         logger.debug("Submitting task {} to worker {}", task.getId(), hostname);
@@ -260,9 +318,9 @@ public class WorkerNode {
                 logger.error("Task {} failed on worker {}: {}", task.getId(), hostname, e.getMessage());
                 task.fail();
             } finally {
-                // Remove from running tasks and increment available slots
                 runningTasks.remove(task.getId());
                 availableSlots.incrementAndGet();
+                usedMemoryMb.addAndGet(-task.getMemoryMb());
                 totalTasksExecuted.incrementAndGet();
             }
             
@@ -363,7 +421,8 @@ public class WorkerNode {
     
     @Override
     public String toString() {
-        return String.format("WorkerNode{id='%s', hostname='%s', totalSlots=%d, availableSlots=%d, runningTasks=%d, totalExecuted=%d}", 
-                id, hostname, totalSlots, availableSlots.get(), runningTasks.size(), totalTasksExecuted.get());
+        String memStr = totalMemoryMb == Integer.MAX_VALUE ? "∞" : String.valueOf(totalMemoryMb);
+        return String.format("WorkerNode{id='%s', hostname='%s', totalSlots=%d, availableSlots=%d, memory=%d/%s MB, runningTasks=%d, totalExecuted=%d}", 
+                id, hostname, totalSlots, availableSlots.get(), usedMemoryMb.get(), memStr, runningTasks.size(), totalTasksExecuted.get());
     }
 }

@@ -11,6 +11,7 @@ C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distribu
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\web\dto\JobDagDto.java
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\web\dto\TaskStateDto.java
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\cluster\WorkerNode.java
+C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\web\dto\AddWorkerRequest.java
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\web\JobController.java
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\web\dto\StageDagDto.java
 C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\src\main\java\com\distributed\compute\config\WebSocketConfig.java

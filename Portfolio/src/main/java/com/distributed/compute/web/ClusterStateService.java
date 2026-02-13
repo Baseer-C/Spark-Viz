@@ -37,6 +37,8 @@ public class ClusterStateService {
         int totalSlots = (Integer) stats.getOrDefault("totalSlots", 0);
         int availableSlots = (Integer) stats.getOrDefault("availableSlots", 0);
         int runningTasks = (Integer) stats.getOrDefault("runningTasks", 0);
+        int totalMemoryMb = (Integer) stats.getOrDefault("totalMemoryMb", 0);
+        int usedMemoryMb = (Integer) stats.getOrDefault("usedMemoryMb", 0);
 
         List<WorkerNodeStateDto> workers = new ArrayList<>();
         long totalCompleted = 0;
@@ -56,6 +58,8 @@ public class ClusterStateService {
                 totalSlots,
                 availableSlots,
                 runningTasks,
+                totalMemoryMb,
+                usedMemoryMb,
                 workers,
                 dag
         );
@@ -109,11 +113,15 @@ public class ClusterStateService {
             health = "UNKNOWN";
         }
 
+        int totalMem = w.getTotalMemoryMb();
+        if (totalMem == Integer.MAX_VALUE) totalMem = 0;
         return new WorkerNodeStateDto(
                 w.getId(),
                 w.getHostname(),
                 w.getTotalSlots(),
                 w.getAvailableSlots(),
+                totalMem,
+                w.getUsedMemoryMb(),
                 w.getRunningTaskCount(),
                 w.getTotalTasksExecuted(),
                 health,

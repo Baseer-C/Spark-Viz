@@ -8,7 +8,8 @@ import java.util.List;
 public record SubmitJobRequest(
     String description,
     List<StageSpec> stages,
-    Boolean simulateDataSkew
+    Boolean simulateDataSkew,
+    Integer taskMemoryMb
 ) {
     public record StageSpec(int taskCount, int taskDurationMs) {}
 }
