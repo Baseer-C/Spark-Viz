@@ -1,7 +1,8 @@
+
 # ⚡ Distributed Compute Engine (Mini-Spark)
 
 > A resilient, distributed DAG (Directed Acyclic Graph) execution engine built with Java, Spring Boot, and WebSockets. Designed to simulate fault tolerance, concurrent task scheduling, and real-time cluster monitoring.
-
+Built by: Baseer Clark
 ---
 
 ## 🎥 Live Demo (Short Preview)
