@@ -7,9 +7,9 @@
 ## 🎥 Live Demo (Short Preview)
 Watch the **Fault Tolerance** in action: notice how tasks automatically reschedule when a node is killed.
 
-<video src="(https://github.com/user-attachments/assets/cf50098b-f276-490d-875a-2535fc8b5874)" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
+<video src="https://github.com/user-attachments/assets/cf50098b-f276-490d-875a-2535fc8b5874" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
 
-> **[📺 Click here to watch the Full Walkthrough (Deep Dive)]( https://github.com/user-attachments/assets/2027cd99-bfb0-44c9-a5ad-d41b9459ff12 )**
+> **[📺 Click here to watch the Full Walkthrough (Deep Dive)](https://github.com/user-attachments/assets/2027cd99-bfb0-44c9-a5ad-d41b9459ff12)**
 > *See the full DAG visualization, straggler simulation, and worker lifecycle management.*
 
 ---
@@ -47,7 +47,7 @@ The system follows a classic **Master-Worker** architecture:
 
 1.  **ClusterManager (The "Brain"):**
     * Holds the global state of the cluster.
-    * manages the `JobQueue` and `TaskScheduler`.
+    * Manages the `JobQueue` and `TaskScheduler`.
     * Broadcasts state updates to the UI via WebSockets every 500ms.
 2.  **WorkerNodes (The "Muscle"):**
     * Independent threads simulating distributed servers.
