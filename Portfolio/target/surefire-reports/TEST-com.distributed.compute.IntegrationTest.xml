@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.distributed.compute.IntegrationTest" time="11.472" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.distributed.compute.IntegrationTest" time="11.487" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290\surefirebooter-20260213124528364_3.jar C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290 2026-02-13T12-45-28_258-jvmRun1 surefire-20260213124528364_1tmp surefire_0-20260213124528364_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\seerc\AppData\Local\Temp\surefire4025224579086498061\surefirebooter-20260213131852790_3.jar C:\Users\seerc\AppData\Local\Temp\surefire4025224579086498061 2026-02-13T13-18-52_696-jvmRun1 surefire-20260213131852790_1tmp surefire_0-20260213131852790_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\target\test-classes;C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\target\classes;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\seerc\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\seerc\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\seerc\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\seerc\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\seerc\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\seerc\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\seerc\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\seerc\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\seerc\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-websocket\3.2.0\spring-boot-starter-websocket-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-messaging\6.1.1\spring-messaging-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-websocket\6.1.1\spring-websocket-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\seerc\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\seerc\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\seerc\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\seerc\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\seerc\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\seerc\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\seerc\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\seerc\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\seerc\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\seerc\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\seerc\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\seerc\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\seerc\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\seerc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\seerc\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\seerc\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\seerc\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\seerc\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\seerc\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\seerc\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\seerc\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="windows-1252"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290\surefirebooter-20260213124528364_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\seerc\AppData\Local\Temp\surefire4025224579086498061\surefirebooter-20260213131852790_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -49,7 +49,7 @@
     <property name="user.dir" value="C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="21248"/>
+    <property name="PID" value="14228"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
     <property name="native.encoding" value="Cp1252"/>
@@ -60,130 +60,130 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testLoadBalancing" classname="com.distributed.compute.IntegrationTest" time="2.115">
-    <system-out><![CDATA[2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb with 1 stages
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb
-2026-02-13T12:45:40.882-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 09e7ac6d-f1bb-42b4-8156-2c75894e261f of job 219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb
-2026-02-13T12:45:41.151-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 55dc00c3-35f4-4a87-b931-31d74ea2dda1 completed successfully
-2026-02-13T12:45:41.151-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job f6c5bedc-58f2-4c45-b1a9-d764e6600af2 completed successfully
-2026-02-13T12:45:41.151-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job bfce5088-49fb-4972-b401-14a230d683a5 completed successfully
-2026-02-13T12:45:41.166-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 55dc00c3-35f4-4a87-b931-31d74ea2dda1 completed: Job{id='55dc00c3-35f4-4a87-b931-31d74ea2dda1', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:41.166-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job bfce5088-49fb-4972-b401-14a230d683a5 completed: Job{id='bfce5088-49fb-4972-b401-14a230d683a5', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:41.166-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job f6c5bedc-58f2-4c45-b1a9-d764e6600af2 completed: Job{id='f6c5bedc-58f2-4c45-b1a9-d764e6600af2', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:41.536-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb completed successfully
-2026-02-13T12:45:41.568-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb completed: Job{id='219f4065-ad6f-4cd2-9cdf-1878ad8ac5cb', description='Load Balancing Test', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:41.568-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job fd41b10f-c467-4927-ae10-f9c234954fd1 completed: Job{id='fd41b10f-c467-4927-ae10-f9c234954fd1', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:41.583-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job fd41b10f-c467-4927-ae10-f9c234954fd1 completed successfully
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
-2026-02-13T12:45:42.887-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
+  <testcase name="testLoadBalancing" classname="com.distributed.compute.IntegrationTest" time="2.114">
+    <system-out><![CDATA[2026-02-13T13:19:05.414-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:19:05.414-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:19:05.414-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 79a33a91-5bd9-4622-8c21-2b754ce693a6 with 1 stages
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 79a33a91-5bd9-4622-8c21-2b754ce693a6
+2026-02-13T13:19:05.415-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage ddd48801-0743-48b1-a20e-974b8cc02eb0 of job 79a33a91-5bd9-4622-8c21-2b754ce693a6
+2026-02-13T13:19:05.574-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 0ed28cad-a48a-4c5f-b41c-15581a3a575f completed successfully
+2026-02-13T13:19:05.574-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job a21d912d-6466-4779-9d2f-f22729619934 completed successfully
+2026-02-13T13:19:05.574-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 86dd72e3-c0b3-4cc7-92b3-29730a3b6ebe completed successfully
+2026-02-13T13:19:05.621-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 0ed28cad-a48a-4c5f-b41c-15581a3a575f completed: Job{id='0ed28cad-a48a-4c5f-b41c-15581a3a575f', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:05.621-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 86dd72e3-c0b3-4cc7-92b3-29730a3b6ebe completed: Job{id='86dd72e3-c0b3-4cc7-92b3-29730a3b6ebe', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:05.621-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job a21d912d-6466-4779-9d2f-f22729619934 completed: Job{id='a21d912d-6466-4779-9d2f-f22729619934', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:05.963-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 79a33a91-5bd9-4622-8c21-2b754ce693a6 completed successfully
+2026-02-13T13:19:06.009-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 7ddb7bd1-8c0b-4b92-af61-fbcb695d1276 completed: Job{id='7ddb7bd1-8c0b-4b92-af61-fbcb695d1276', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:06.009-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 7ddb7bd1-8c0b-4b92-af61-fbcb695d1276 completed successfully
+2026-02-13T13:19:06.009-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 79a33a91-5bd9-4622-8c21-2b754ce693a6 completed: Job{id='79a33a91-5bd9-4622-8c21-2b754ce693a6', description='Load Balancing Test', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
+2026-02-13T13:19:07.419-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testClusterStats" classname="com.distributed.compute.IntegrationTest" time="1.115">
-    <system-out><![CDATA[2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 4aa51ed1-28cc-484e-bbdd-269297053fd0 with 1 stages
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 4aa51ed1-28cc-484e-bbdd-269297053fd0
-2026-02-13T12:45:42.998-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 08a3d465-f9b8-4ca1-b529-c09fa159585e of job 4aa51ed1-28cc-484e-bbdd-269297053fd0
-2026-02-13T12:45:43.212-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 4aa51ed1-28cc-484e-bbdd-269297053fd0 completed successfully
-2026-02-13T12:45:43.367-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 4aa51ed1-28cc-484e-bbdd-269297053fd0 completed: Job{id='4aa51ed1-28cc-484e-bbdd-269297053fd0', description='Stats Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
-2026-02-13T12:45:44.004-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
+  <testcase name="testClusterStats" classname="com.distributed.compute.IntegrationTest" time="1.12">
+    <system-out><![CDATA[2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 4fe1326d-1098-4426-8055-47cd183fe385 with 1 stages
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 4fe1326d-1098-4426-8055-47cd183fe385
+2026-02-13T13:19:07.530-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 57ecea4b-9dd7-491a-8182-246949c0532b of job 4fe1326d-1098-4426-8055-47cd183fe385
+2026-02-13T13:19:07.745-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 4fe1326d-1098-4426-8055-47cd183fe385 completed successfully
+2026-02-13T13:19:07.822-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 4fe1326d-1098-4426-8055-47cd183fe385 completed: Job{id='4fe1326d-1098-4426-8055-47cd183fe385', description='Stats Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
+2026-02-13T13:19:08.539-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
 ]]></system-out>
   </testcase>
   <testcase name="testFullJobExecution" classname="com.distributed.compute.IntegrationTest" time="5.118">
-    <system-out><![CDATA[2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 2124d38f-6f77-4e57-ad1d-a9849ff0cab2 with 3 stages
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 2124d38f-6f77-4e57-ad1d-a9849ff0cab2
-2026-02-13T12:45:44.114-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage e77764f3-8749-4ce6-9a8f-fd50063b4482 of job 2124d38f-6f77-4e57-ad1d-a9849ff0cab2
-2026-02-13T12:45:44.436-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage e77764f3-8749-4ce6-9a8f-fd50063b4482 completed, advancing to next stage
-2026-02-13T12:45:44.436-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 38a9c089-88a3-44d8-b61c-8068bd95e79b of job 2124d38f-6f77-4e57-ad1d-a9849ff0cab2
-2026-02-13T12:45:44.760-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage 38a9c089-88a3-44d8-b61c-8068bd95e79b completed, advancing to next stage
-2026-02-13T12:45:44.760-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage f0e9586d-0c1e-4f0c-bddd-5d09a46b6822 of job 2124d38f-6f77-4e57-ad1d-a9849ff0cab2
-2026-02-13T12:45:45.084-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 2124d38f-6f77-4e57-ad1d-a9849ff0cab2 completed successfully
-2026-02-13T12:45:45.161-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 2124d38f-6f77-4e57-ad1d-a9849ff0cab2 completed: Job{id='2124d38f-6f77-4e57-ad1d-a9849ff0cab2', description='Integration Test Job', stageCount=3, completedStages=2, currentStageIndex=2, isCompleted=true}
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
-2026-02-13T12:45:49.122-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
+    <system-out><![CDATA[2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: f6bce943-8ffb-45dd-bef8-6088f4be81df with 3 stages
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: f6bce943-8ffb-45dd-bef8-6088f4be81df
+2026-02-13T13:19:08.650-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage b1313fec-4750-4434-9fa7-ae9d3cd21264 of job f6bce943-8ffb-45dd-bef8-6088f4be81df
+2026-02-13T13:19:08.975-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage b1313fec-4750-4434-9fa7-ae9d3cd21264 completed, advancing to next stage
+2026-02-13T13:19:08.975-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 755417b7-07f4-4ea0-a67f-d3f444afa224 of job f6bce943-8ffb-45dd-bef8-6088f4be81df
+2026-02-13T13:19:09.303-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage 755417b7-07f4-4ea0-a67f-d3f444afa224 completed, advancing to next stage
+2026-02-13T13:19:09.303-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 3893a33f-451f-4625-ac55-f4e6f1594044 of job f6bce943-8ffb-45dd-bef8-6088f4be81df
+2026-02-13T13:19:09.612-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job f6bce943-8ffb-45dd-bef8-6088f4be81df completed: Job{id='f6bce943-8ffb-45dd-bef8-6088f4be81df', description='Integration Test Job', stageCount=3, completedStages=2, currentStageIndex=2, isCompleted=true}
+2026-02-13T13:19:09.628-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job f6bce943-8ffb-45dd-bef8-6088f4be81df completed successfully
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
+2026-02-13T13:19:13.660-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testMultipleJobsConcurrent" classname="com.distributed.compute.IntegrationTest" time="3.112">
-    <system-out><![CDATA[2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 74a26bb2-ea83-461f-836e-b3031965365c with 1 stages
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 26ba295c-f2e1-4725-a227-76031d64f4d4 with 1 stages
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 3437a73d-f13a-4dd9-914a-bb37930403e7 with 1 stages
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 74a26bb2-ea83-461f-836e-b3031965365c
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 26ba295c-f2e1-4725-a227-76031d64f4d4
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 8360363a-aaf7-4626-a37f-3b6421854568 of job 74a26bb2-ea83-461f-836e-b3031965365c
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 99652c14-71c6-4e42-bb6c-d9887558c229 of job 26ba295c-f2e1-4725-a227-76031d64f4d4
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 3437a73d-f13a-4dd9-914a-bb37930403e7
-2026-02-13T12:45:49.232-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 02aacbfc-e97b-4b4a-aeb3-a758eac54355 of job 3437a73d-f13a-4dd9-914a-bb37930403e7
-2026-02-13T12:45:49.448-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 26ba295c-f2e1-4725-a227-76031d64f4d4 completed successfully
-2026-02-13T12:45:49.448-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 3437a73d-f13a-4dd9-914a-bb37930403e7 completed successfully
-2026-02-13T12:45:49.448-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 74a26bb2-ea83-461f-836e-b3031965365c completed successfully
-2026-02-13T12:45:49.557-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 26ba295c-f2e1-4725-a227-76031d64f4d4 completed: Job{id='26ba295c-f2e1-4725-a227-76031d64f4d4', description='Job 2', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:49.557-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 74a26bb2-ea83-461f-836e-b3031965365c completed: Job{id='74a26bb2-ea83-461f-836e-b3031965365c', description='Job 1', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:49.557-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 3437a73d-f13a-4dd9-914a-bb37930403e7 completed: Job{id='3437a73d-f13a-4dd9-914a-bb37930403e7', description='Job 3', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
-2026-02-13T12:45:52.235-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
+  <testcase name="testMultipleJobsConcurrent" classname="com.distributed.compute.IntegrationTest" time="3.123">
+    <system-out><![CDATA[2026-02-13T13:19:13.769-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:19:13.769-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:19:13.769-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 2 slots, unlimited MB memory
+2026-02-13T13:19:13.769-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 285018d9-0f3d-4a99-a210-7db440ace38c with 1 stages
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 746e3e81-158d-45dd-bd78-a07d39d39465 with 1 stages
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 285018d9-0f3d-4a99-a210-7db440ace38c
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f with 1 stages
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 746e3e81-158d-45dd-bd78-a07d39d39465
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage fe4d7d41-502d-4e9a-aee6-9ad0f0b5b93b of job 285018d9-0f3d-4a99-a210-7db440ace38c
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 0064fc89-ffb5-4d9f-a43e-709c8ad7e836 of job 746e3e81-158d-45dd-bd78-a07d39d39465
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f
+2026-02-13T13:19:13.770-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 62f50587-e3a5-4fb2-a8f0-22d2201d2f9a of job 0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f
+2026-02-13T13:19:13.987-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 285018d9-0f3d-4a99-a210-7db440ace38c completed successfully
+2026-02-13T13:19:13.987-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 746e3e81-158d-45dd-bd78-a07d39d39465 completed successfully
+2026-02-13T13:19:13.987-05:00  INFO 14228 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f completed successfully
+2026-02-13T13:19:14.017-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f completed: Job{id='0de1aa6b-e19a-48eb-8a4c-1322f5a47f2f', description='Job 3', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:14.017-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 746e3e81-158d-45dd-bd78-a07d39d39465 completed: Job{id='746e3e81-158d-45dd-bd78-a07d39d39465', description='Job 2', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:14.017-05:00  INFO 14228 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 285018d9-0f3d-4a99-a210-7db440ace38c completed: Job{id='285018d9-0f3d-4a99-a210-7db440ace38c', description='Job 1', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
+2026-02-13T13:19:16.783-05:00  INFO 14228 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
 ]]></system-out>
   </testcase>
 </testsuite>

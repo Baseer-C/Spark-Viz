@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.distributed.compute.cluster.ClusterManagerTest" time="10.56" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.distributed.compute.cluster.ClusterManagerTest" time="10.464" tests="17" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,8 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290\surefirebooter-20260213124528364_3.jar C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290 2026-02-13T12-45-28_258-jvmRun1 surefire-20260213124528364_1tmp surefire_0-20260213124528364_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\seerc\AppData\Local\Temp\surefire15873695073982164521\surefirebooter-20260213132152781_3.jar C:\Users\seerc\AppData\Local\Temp\surefire15873695073982164521 2026-02-13T13-21-52_676-jvmRun1 surefire-20260213132152781_1tmp surefire_0-20260213132152781_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="ClusterManagerTest"/>
     <property name="surefire.test.class.path" value="C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\target\test-classes;C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio\target\classes;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\seerc\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\seerc\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\seerc\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\seerc\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\seerc\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\seerc\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\seerc\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\seerc\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\seerc\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\seerc\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\seerc\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-websocket\3.2.0\spring-boot-starter-websocket-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-messaging\6.1.1\spring-messaging-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-websocket\6.1.1\spring-websocket-6.1.1.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\seerc\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\seerc\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\seerc\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\seerc\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\seerc\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\seerc\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\seerc\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\seerc\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\seerc\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\seerc\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\seerc\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\seerc\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\seerc\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\seerc\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\seerc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\seerc\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\seerc\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\seerc\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\seerc\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\seerc\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\seerc\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\seerc\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\seerc\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\seerc\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\seerc"/>
@@ -32,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="windows-1252"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\seerc\AppData\Local\Temp\surefire4601499985154246290\surefirebooter-20260213124528364_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\seerc\AppData\Local\Temp\surefire15873695073982164521\surefirebooter-20260213132152781_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -49,7 +50,7 @@
     <property name="user.dir" value="C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="21248"/>
+    <property name="PID" value="2776"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
     <property name="native.encoding" value="Cp1252"/>
@@ -60,9 +61,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testRegisterWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.716">
-    <system-out><![CDATA[12:45:29.010 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.distributed.compute.cluster.ClusterManagerTest]: ClusterManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:45:29.090 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.distributed.compute.DistributedComputeApplication for test class com.distributed.compute.cluster.ClusterManagerTest
+  <testcase name="testRegisterWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.765">
+    <system-out><![CDATA[13:21:53.302 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.distributed.compute.cluster.ClusterManagerTest]: ClusterManagerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:21:53.376 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.distributed.compute.DistributedComputeApplication for test class com.distributed.compute.cluster.ClusterManagerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -72,317 +73,317 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2026-02-13T12:45:29.416-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManagerTest   : Starting ClusterManagerTest using Java 17.0.12 with PID 21248 (started by seerc in C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio)
-2026-02-13T12:45:29.419-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManagerTest   : No active profile set, falling back to 1 default profile: "default"
-2026-02-13T12:45:29.954-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Initializing ClusterManager
-2026-02-13T12:45:29.955-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : ClusterManager initialized
-2026-02-13T12:45:30.403-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManagerTest   : Started ClusterManagerTest in 1.2 seconds (process running for 1.967)
-2026-02-13T12:45:31.016-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:31.017-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:31.017-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:31.017-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:31.019-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 3 slots, unlimited MB memory
-2026-02-13T12:45:31.019-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
-2026-02-13T12:45:31.021-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
-2026-02-13T12:45:31.021-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
-2026-02-13T12:45:31.021-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
-2026-02-13T12:45:31.021-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:31.023-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+2026-02-13T13:21:53.659-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManagerTest   : Starting ClusterManagerTest using Java 17.0.12 with PID 2776 (started by seerc in C:\Users\seerc\Downloads\LeetCode\Spark-Viz\Portfolio)
+2026-02-13T13:21:53.661-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManagerTest   : No active profile set, falling back to 1 default profile: "default"
+2026-02-13T13:21:54.154-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Initializing ClusterManager
+2026-02-13T13:21:54.155-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : ClusterManager initialized
+2026-02-13T13:21:54.589-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManagerTest   : Started ClusterManagerTest in 1.105 seconds (process running for 1.736)
+2026-02-13T13:21:55.258-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:55.260-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:55.260-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:55.260-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:55.261-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-3 with 3 slots, unlimited MB memory
+2026-02-13T13:21:55.262-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-3
+2026-02-13T13:21:55.264-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-3
+2026-02-13T13:21:55.264-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3
+2026-02-13T13:21:55.264-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-3 shut down gracefully
+2026-02-13T13:21:55.264-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-3 immediately
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:55.267-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testJobExecution" classname="com.distributed.compute.cluster.ClusterManagerTest" time="2.12">
-    <system-out><![CDATA[2026-02-13T12:45:31.139-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:31.140-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:31.140-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:31.140-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:31.142-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 485546d9-bb39-4dad-99f5-775f8905c366 with 1 stages
-2026-02-13T12:45:31.143-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 485546d9-bb39-4dad-99f5-775f8905c366
-2026-02-13T12:45:31.143-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 1eded8bf-1a84-4208-8601-2981f67591db of job 485546d9-bb39-4dad-99f5-775f8905c366
-2026-02-13T12:45:31.363-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 485546d9-bb39-4dad-99f5-775f8905c366 completed successfully
-2026-02-13T12:45:31.363-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 485546d9-bb39-4dad-99f5-775f8905c366 completed: Job{id='485546d9-bb39-4dad-99f5-775f8905c366', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:33.149-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.149-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.150-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testJobExecution" classname="com.distributed.compute.cluster.ClusterManagerTest" time="2.118">
+    <system-out><![CDATA[2026-02-13T13:21:55.385-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:55.386-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:55.386-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:55.386-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:55.387-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 26640def-1480-430c-bf67-7641f149476b with 1 stages
+2026-02-13T13:21:55.387-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 26640def-1480-430c-bf67-7641f149476b
+2026-02-13T13:21:55.388-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 2148cd03-2014-465a-afe0-ba4a8a161220 of job 26640def-1480-430c-bf67-7641f149476b
+2026-02-13T13:21:55.607-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 26640def-1480-430c-bf67-7641f149476b completed successfully
+2026-02-13T13:21:55.765-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 26640def-1480-430c-bf67-7641f149476b completed: Job{id='26640def-1480-430c-bf67-7641f149476b', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:21:57.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.394-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
   <testcase name="testClusterManagerToString" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
-    <system-out><![CDATA[2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.260-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+    <system-out><![CDATA[2026-02-13T13:21:57.504-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.504-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.504-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:57.504-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.505-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetAllJobs" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.109">
-    <system-out><![CDATA[2026-02-13T12:45:33.368-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.368-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.368-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.368-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: cb053ac0-ddd4-4e41-a88a-914ad652d948 with 1 stages
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: a27f6021-4ce1-45eb-8811-bfddbde42648 with 1 stages
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: cb053ac0-ddd4-4e41-a88a-914ad652d948
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage ad9b6633-5e84-4838-a3d8-ff7f721a5040 of job cb053ac0-ddd4-4e41-a88a-914ad652d948
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: a27f6021-4ce1-45eb-8811-bfddbde42648
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 9208d98c-6b4d-4049-a859-0d5158a79339 of job a27f6021-4ce1-45eb-8811-bfddbde42648
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.369-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetAllJobs" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
+    <system-out><![CDATA[2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 58aabbdb-8378-4bc3-8a5e-f64ec7737987 with 1 stages
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 5aa70851-605f-4eaa-a3e2-1efb06ffaae0 with 1 stages
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 58aabbdb-8378-4bc3-8a5e-f64ec7737987
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 5aa70851-605f-4eaa-a3e2-1efb06ffaae0
+2026-02-13T13:21:57.614-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 9a15e779-cd21-4493-a716-ebee8d50dbdc of job 58aabbdb-8378-4bc3-8a5e-f64ec7737987
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 70f2ec71-957a-41dd-be51-403fe823909e of job 5aa70851-605f-4eaa-a3e2-1efb06ffaae0
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.615-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testRegisterDuplicateWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.109">
-    <system-out><![CDATA[2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1-duplicate with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.478-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.479-05:00  WARN 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Worker node worker-1 already registered
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.479-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.480-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testRegisterDuplicateWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.108">
+    <system-out><![CDATA[2026-02-13T13:21:57.721-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.721-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.721-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:57.721-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1-duplicate with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.722-05:00  WARN 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Worker node worker-1 already registered
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.722-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.723-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.723-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.723-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testSubmitNullJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.105">
-    <system-out><![CDATA[2026-02-13T12:45:33.588-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.588-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.588-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.588-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.590-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testSubmitNullJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.109">
+    <system-out><![CDATA[2026-02-13T13:21:57.831-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.831-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.831-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:57.831-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.832-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetTotalAvailableSlots" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
-    <system-out><![CDATA[2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:33.695-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetTotalAvailableSlots" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.108">
+    <system-out><![CDATA[2026-02-13T13:21:57.940-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.941-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:57.941-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:57.941-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:57.941-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:21:57.942-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testJobWithMultipleStages" classname="com.distributed.compute.cluster.ClusterManagerTest" time="3.116">
-    <system-out><![CDATA[2026-02-13T12:45:33.803-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.803-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:33.803-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:33.803-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:33.804-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 80aaaac6-fcc3-4154-b3a0-0327b1db2a12 with 2 stages
-2026-02-13T12:45:33.804-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 80aaaac6-fcc3-4154-b3a0-0327b1db2a12
-2026-02-13T12:45:33.804-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 776c3eaa-6589-430d-8064-b401cbed7f6c of job 80aaaac6-fcc3-4154-b3a0-0327b1db2a12
-2026-02-13T12:45:34.019-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job cb053ac0-ddd4-4e41-a88a-914ad652d948 completed successfully
-2026-02-13T12:45:34.019-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job a27f6021-4ce1-45eb-8811-bfddbde42648 completed successfully
-2026-02-13T12:45:34.159-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job cb053ac0-ddd4-4e41-a88a-914ad652d948 completed: Job{id='cb053ac0-ddd4-4e41-a88a-914ad652d948', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:34.159-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job a27f6021-4ce1-45eb-8811-bfddbde42648 completed: Job{id='a27f6021-4ce1-45eb-8811-bfddbde42648', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:34.236-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage 776c3eaa-6589-430d-8064-b401cbed7f6c completed, advancing to next stage
-2026-02-13T12:45:34.236-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage b596320a-0eba-4e8d-8888-8b5a60857a70 of job 80aaaac6-fcc3-4154-b3a0-0327b1db2a12
-2026-02-13T12:45:34.452-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 80aaaac6-fcc3-4154-b3a0-0327b1db2a12 completed successfully
-2026-02-13T12:45:34.562-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 80aaaac6-fcc3-4154-b3a0-0327b1db2a12 completed: Job{id='80aaaac6-fcc3-4154-b3a0-0327b1db2a12', description='Multi-Stage Job', stageCount=2, completedStages=1, currentStageIndex=1, isCompleted=true}
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:36.810-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testJobWithMultipleStages" classname="com.distributed.compute.cluster.ClusterManagerTest" time="3.117">
+    <system-out><![CDATA[2026-02-13T13:21:58.049-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 5ee66900-a94e-4817-a1c1-13b83677468a with 2 stages
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 5ee66900-a94e-4817-a1c1-13b83677468a
+2026-02-13T13:21:58.049-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 817c1799-4b06-4e1d-aa9b-375a6e7030ba of job 5ee66900-a94e-4817-a1c1-13b83677468a
+2026-02-13T13:21:58.264-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 58aabbdb-8378-4bc3-8a5e-f64ec7737987 completed successfully
+2026-02-13T13:21:58.264-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 5aa70851-605f-4eaa-a3e2-1efb06ffaae0 completed successfully
+2026-02-13T13:21:58.357-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 5aa70851-605f-4eaa-a3e2-1efb06ffaae0 completed: Job{id='5aa70851-605f-4eaa-a3e2-1efb06ffaae0', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:21:58.357-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 58aabbdb-8378-4bc3-8a5e-f64ec7737987 completed: Job{id='58aabbdb-8378-4bc3-8a5e-f64ec7737987', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:21:58.481-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Stage 817c1799-4b06-4e1d-aa9b-375a6e7030ba completed, advancing to next stage
+2026-02-13T13:21:58.481-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 159716d3-b67f-417a-bfa6-a500617d45c3 of job 5ee66900-a94e-4817-a1c1-13b83677468a
+2026-02-13T13:21:58.701-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 5ee66900-a94e-4817-a1c1-13b83677468a completed successfully
+2026-02-13T13:21:58.763-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 5ee66900-a94e-4817-a1c1-13b83677468a completed: Job{id='5ee66900-a94e-4817-a1c1-13b83677468a', description='Multi-Stage Job', stageCount=2, completedStages=1, currentStageIndex=1, isCompleted=true}
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:01.058-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetTotalTasksScheduled" classname="com.distributed.compute.cluster.ClusterManagerTest" time="1.118">
-    <system-out><![CDATA[2026-02-13T12:45:36.921-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 09848468-677a-455c-a0d1-6c594d9e2ba9 with 1 stages
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 09848468-677a-455c-a0d1-6c594d9e2ba9
-2026-02-13T12:45:36.921-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 35d88fa5-9127-42f7-936c-02ad932b5ba0 of job 09848468-677a-455c-a0d1-6c594d9e2ba9
-2026-02-13T12:45:37.136-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 09848468-677a-455c-a0d1-6c594d9e2ba9 completed successfully
-2026-02-13T12:45:37.168-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 09848468-677a-455c-a0d1-6c594d9e2ba9 completed: Job{id='09848468-677a-455c-a0d1-6c594d9e2ba9', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:37.929-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetTotalTasksScheduled" classname="com.distributed.compute.cluster.ClusterManagerTest" time="1.114">
+    <system-out><![CDATA[2026-02-13T13:22:01.168-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e with 1 stages
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e
+2026-02-13T13:22:01.168-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage f1b4e9f1-984d-4340-b866-98977b179109 of job 4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e
+2026-02-13T13:22:01.367-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e completed: Job{id='4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:22:01.382-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 4a0ed9bd-b9c2-4443-8a3a-0c9cd977c36e completed successfully
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:02.174-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetAllWorkers" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.106">
-    <system-out><![CDATA[2026-02-13T12:45:38.039-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:38.040-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetAllWorkers" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.109">
+    <system-out><![CDATA[2026-02-13T13:22:02.282-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:02.283-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testRemoveWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.111">
-    <system-out><![CDATA[2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:38.147-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:38.148-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:38.148-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:38.148-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:38.148-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testRemoveWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.105">
+    <system-out><![CDATA[2026-02-13T13:22:02.392-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:02.393-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetClusterStats" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.105">
-    <system-out><![CDATA[2026-02-13T12:45:38.258-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.258-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.258-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:38.258-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:38.259-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetClusterStats" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
+    <system-out><![CDATA[2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:02.500-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testSubmitJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.621">
-    <system-out><![CDATA[2026-02-13T12:45:38.365-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 7b27ab8b-89a6-490d-b4d4-99a48615f9c9 with 1 stages
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 7b27ab8b-89a6-490d-b4d4-99a48615f9c9
-2026-02-13T12:45:38.366-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage de976096-d051-4d92-8307-b51ee9b95f73 of job 7b27ab8b-89a6-490d-b4d4-99a48615f9c9
-2026-02-13T12:45:38.566-05:00  INFO 21248 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 7b27ab8b-89a6-490d-b4d4-99a48615f9c9 completed: Job{id='7b27ab8b-89a6-490d-b4d4-99a48615f9c9', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
-2026-02-13T12:45:38.581-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 7b27ab8b-89a6-490d-b4d4-99a48615f9c9 completed successfully
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:38.875-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testSubmitJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.619">
+    <system-out><![CDATA[2026-02-13T13:22:02.608-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 373a1513-6e0e-45cd-90a6-3161cb2b0892 with 1 stages
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 373a1513-6e0e-45cd-90a6-3161cb2b0892
+2026-02-13T13:22:02.608-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 28caaf66-e23e-4e75-872d-6169aa2c4518 of job 373a1513-6e0e-45cd-90a6-3161cb2b0892
+2026-02-13T13:22:02.825-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Job 373a1513-6e0e-45cd-90a6-3161cb2b0892 completed successfully
+2026-02-13T13:22:02.962-05:00  INFO 2776 --- [uster-scheduler] c.d.compute.cluster.ClusterManager       : Job 373a1513-6e0e-45cd-90a6-3161cb2b0892 completed: Job{id='373a1513-6e0e-45cd-90a6-3161cb2b0892', description='Test Job', stageCount=1, completedStages=0, currentStageIndex=0, isCompleted=true}
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:03.117-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:03.119-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:03.119-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetTotalJobsSubmitted" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.109">
-    <system-out><![CDATA[2026-02-13T12:45:38.987-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.987-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:38.987-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:38.987-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: f6c5bedc-58f2-4c45-b1a9-d764e6600af2 with 1 stages
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 55dc00c3-35f4-4a87-b931-31d74ea2dda1 with 1 stages
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: f6c5bedc-58f2-4c45-b1a9-d764e6600af2
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 55dc00c3-35f4-4a87-b931-31d74ea2dda1
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage a59c5e63-f359-46fd-bf87-767b8921e11f of job 55dc00c3-35f4-4a87-b931-31d74ea2dda1
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 4505fd23-7bf6-4339-882f-9b7b5862aaf6 of job f6c5bedc-58f2-4c45-b1a9-d764e6600af2
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:38.988-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetTotalJobsSubmitted" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.106">
+    <system-out><![CDATA[2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 4c9d94a0-9890-4d4f-93c9-7fe9ec1ba7c6 with 1 stages
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 4112f4f1-ecef-4f83-b38a-80d418045610 with 1 stages
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 4c9d94a0-9890-4d4f-93c9-7fe9ec1ba7c6
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 4112f4f1-ecef-4f83-b38a-80d418045610
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 105572e6-3b37-4f91-9a97-1eb81fb24792 of job 4c9d94a0-9890-4d4f-93c9-7fe9ec1ba7c6
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 800303fb-feeb-48ed-b617-30c82da16e61 of job 4112f4f1-ecef-4f83-b38a-80d418045610
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:03.229-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:03.230-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:03.230-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:03.230-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testGetJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.106">
-    <system-out><![CDATA[2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: bfce5088-49fb-4972-b401-14a230d683a5 with 1 stages
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: bfce5088-49fb-4972-b401-14a230d683a5
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:39.097-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 583c91a2-1a6a-4c68-aebf-859a94297a87 of job bfce5088-49fb-4972-b401-14a230d683a5
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:39.098-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testGetJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
+    <system-out><![CDATA[2026-02-13T13:22:03.335-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: 8a65809f-6097-4b2a-9f10-abf9ab33086e with 1 stages
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: 8a65809f-6097-4b2a-9f10-abf9ab33086e
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage a3b1a519-525b-4501-b311-dd61f89d9fa2 of job 8a65809f-6097-4b2a-9f10-abf9ab33086e
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:03.336-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
-  <testcase name="testSubmitDuplicateJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.106">
-    <system-out><![CDATA[2026-02-13T12:45:39.204-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: fd41b10f-c467-4927-ae10-f9c234954fd1 with 1 stages
-2026-02-13T12:45:39.204-05:00  WARN 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Job fd41b10f-c467-4927-ae10-f9c234954fd1 already submitted
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: fd41b10f-c467-4927-ae10-f9c234954fd1
-2026-02-13T12:45:39.204-05:00  INFO 21248 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage a3bde275-acd6-4ff8-9922-dfec88889129 of job fd41b10f-c467-4927-ae10-f9c234954fd1
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:39.205-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+  <testcase name="testSubmitDuplicateJob" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.108">
+    <system-out><![CDATA[2026-02-13T13:22:03.444-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Submitted job: a3848abe-59d2-4d31-8f96-960fb5ed9622 with 1 stages
+2026-02-13T13:22:03.444-05:00  WARN 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Job a3848abe-59d2-4d31-8f96-960fb5ed9622 already submitted
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting execution of job: a3848abe-59d2-4d31-8f96-960fb5ed9622
+2026-02-13T13:22:03.444-05:00  INFO 2776 --- [   job-executor] c.d.compute.cluster.ClusterManager       : Starting stage 8bbacb26-1de5-4f87-9928-e83ebbf282c4 of job a3848abe-59d2-4d31-8f96-960fb5ed9622
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:03.445-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
   <testcase name="testGetWorker" classname="com.distributed.compute.cluster.ClusterManagerTest" time="0.107">
-    <system-out><![CDATA[2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
-2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
-2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
-2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
-2026-02-13T12:45:39.311-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
-2026-02-13T12:45:39.312-05:00  INFO 21248 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
+    <system-out><![CDATA[2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-1 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : WorkerNode created: worker-2 with 2 slots, unlimited MB memory
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-1
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Registered worker node: worker-2
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-1
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-1 shut down gracefully
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-1 immediately
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.ClusterManager       : Removed worker node: worker-2
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Worker node worker-2 shut down gracefully
+2026-02-13T13:22:03.553-05:00  INFO 2776 --- [           main] c.d.compute.cluster.WorkerNode           : Shutting down worker node worker-2 immediately
 ]]></system-out>
   </testcase>
 </testsuite>

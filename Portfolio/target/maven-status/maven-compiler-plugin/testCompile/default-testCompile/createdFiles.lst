@@ -1,0 +1,6 @@
+com\distributed\compute\model\JobTest.class
+com\distributed\compute\model\StageTest.class
+com\distributed\compute\IntegrationTest.class
+com\distributed\compute\model\TaskTest.class
+com\distributed\compute\cluster\WorkerNodeTest.class
+com\distributed\compute\cluster\ClusterManagerTest.class
