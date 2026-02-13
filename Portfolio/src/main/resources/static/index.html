@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cluster Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7/bundles/stomp.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #1a1a24;
+      --surface-hover: #222230;
+      --border: #2a2a3a;
+      --text: #e8e8ed;
+      --muted: #8888a0;
+      --pending: #6b7280;
+      --running: #3b82f6;
+      --completed: #22c55e;
+      --failed: #ef4444;
+      --kill: #dc2626;
+      --kill-hover: #b91c1c;
+      --accent: #6366f1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+    .status {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    .status.connected { color: var(--completed); }
+    .status.disconnected { color: var(--failed); }
+
+    .cluster-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .stat-card.highlight {
+      border-color: var(--completed);
+      background: linear-gradient(135deg, rgba(34,197,94,0.08) 0%, var(--surface) 100%);
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .stat-card.highlight .stat-value { color: var(--completed); }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+    }
+    .legend-dot.PENDING { background: var(--pending); }
+    .legend-dot.RUNNING { background: var(--running); }
+    .legend-dot.COMPLETED { background: var(--completed); }
+    .legend-dot.FAILED { background: var(--failed); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 1400px;
+    }
+    .worker-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .worker-card:hover { border-color: var(--accent); }
+    .worker-card.killed {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .worker-card.just-completed {
+      animation: pulse-green 0.6s ease-out;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      70% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+    .worker-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+    .worker-name { font-weight: 600; font-size: 1.05rem; }
+    .worker-health {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(34,197,94,0.2);
+      color: var(--completed);
+    }
+    .worker-health.UNHEALTHY { background: rgba(239,68,68,0.2); color: var(--failed); }
+
+    .worker-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .worker-metric {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 0.6rem 0.75rem;
+      text-align: center;
+    }
+    .worker-metric .value { font-size: 1.25rem; font-weight: 700; display: block; }
+    .worker-metric .label { font-size: 0.7rem; color: var(--muted); }
+    .worker-metric.completed .value { color: var(--completed); }
+    .worker-metric.slots .value { color: var(--accent); }
+
+    .tasks-section { margin-bottom: 0.5rem; }
+    .tasks-section-title { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .tasks-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-content: flex-start;
+      min-height: 88px;
+    }
+    .task-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .task-dot:hover { transform: scale(1.1); }
+    .task-dot.PENDING { background: var(--pending); }
+    .task-dot.RUNNING { background: var(--running); box-shadow: 0 0 8px rgba(59,130,246,0.5); }
+    .task-dot.COMPLETED { background: var(--completed); }
+    .task-dot.FAILED { background: var(--failed); }
+    .kill-btn {
+      margin-top: auto;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      background: var(--kill);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .kill-btn:hover { background: var(--kill-hover); }
+    .kill-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>Cluster Dashboard</h1>
+      <p id="status" class="status disconnected">Connecting...</p>
+    </div>
+  </div>
+
+  <div class="cluster-summary" id="clusterSummary">
+    <div class="stat-card highlight">
+      <div class="stat-label">Total completed</div>
+      <div class="stat-value" id="totalCompleted">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tasks scheduled</div>
+      <div class="stat-value" id="totalScheduled">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Pending</div>
+      <div class="stat-value" id="pendingCount">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Running now</div>
+      <div class="stat-value" id="runningTasks">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Jobs</div>
+      <div class="stat-value" id="totalJobs">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Slots (free / total)</div>
+      <div class="stat-value" id="slots">0 / 0</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot PENDING"></span> Pending / idle slot</span>
+    <span class="legend-item"><span class="legend-dot RUNNING"></span> Running</span>
+    <span class="legend-item"><span class="legend-dot COMPLETED"></span> Completed</span>
+    <span class="legend-item"><span class="legend-dot FAILED"></span> Failed</span>
+  </div>
+
+  <div class="grid" id="workerGrid"></div>
+
+  <script>
+    const baseUrl = (window.location.origin && window.location.origin.startsWith('http'))
+      ? window.location.origin
+      : 'http://localhost:8080';
+    const apiBase = baseUrl + '/api/workers';
+
+    const statusEl = document.getElementById('status');
+    const workerGrid = document.getElementById('workerGrid');
+    const totalCompletedEl = document.getElementById('totalCompleted');
+    const totalScheduledEl = document.getElementById('totalScheduled');
+    const pendingCountEl = document.getElementById('pendingCount');
+    const runningTasksEl = document.getElementById('runningTasks');
+    const totalJobsEl = document.getElementById('totalJobs');
+    const slotsEl = document.getElementById('slots');
+
+    let previousCompletedByWorker = {};
+
+    const client = new StompJs.Client({
+      brokerURL: baseUrl.replace(/^http/, 'ws'),
+      reconnectDelay: 2000,
+      heartbeatIncoming: 4000,
+      heartbeatOutgoing: 4000,
+    });
+    client.webSocketFactory = function () { return new SockJS(baseUrl + '/ws'); };
+
+    client.onConnect = function () {
+      statusEl.textContent = 'Connected · live updates every 500ms';
+      statusEl.className = 'status connected';
+      client.subscribe('/topic/cluster-state', function (msg) {
+        const state = JSON.parse(msg.body);
+        render(state);
+      });
+    };
+    client.onStompError = function () {
+      statusEl.textContent = 'Disconnected. Retrying...';
+      statusEl.className = 'status disconnected';
+    };
+    client.activate();
+
+    function render(state) {
+      totalCompletedEl.textContent = state.totalTasksCompleted ?? 0;
+      totalScheduledEl.textContent = state.totalTasksScheduled ?? 0;
+      pendingCountEl.textContent = state.pendingTaskCount ?? 0;
+      runningTasksEl.textContent = state.runningTasks ?? 0;
+      totalJobsEl.textContent = state.totalJobs ?? 0;
+      slotsEl.textContent = (state.availableSlots ?? 0) + ' / ' + (state.totalSlots ?? 0);
+
+      const workers = state.workers || [];
+      workerGrid.innerHTML = '';
+
+      for (let i = 0; i < 4; i++) {
+        const worker = workers[i];
+        const card = document.createElement('div');
+        card.className = 'worker-card';
+        const workerId = worker ? worker.id : null;
+        const completed = worker ? worker.totalTasksExecuted : 0;
+        const prevCompleted = previousCompletedByWorker[workerId] ?? 0;
+        if (workerId && completed > prevCompleted) {
+          card.classList.add('just-completed');
+          previousCompletedByWorker[workerId] = completed;
+        }
+        if (workerId) previousCompletedByWorker[workerId] = completed;
+
+        if (!worker) {
+          card.classList.add('killed');
+          card.innerHTML = `
+            <div class="worker-header"><span class="worker-name">Worker ${i + 1}</span></div>
+            <div class="worker-metrics">
+              <div class="worker-metric completed"><span class="value">—</span><span class="label">Completed</span></div>
+              <div class="worker-metric slots"><span class="value">—</span><span class="label">Slots</span></div>
+            </div>
+            <div class="tasks-section"><div class="tasks-section-title">Slots</div><div class="tasks-box"></div></div>
+            <button class="kill-btn" disabled>KILL NODE</button>
+          `;
+        } else {
+          const tasks = worker.tasks || [];
+          const taskDots = tasks.map(t =>
+            `<div class="task-dot ${t.status}" title="${(t.description || t.id).replace(/"/g, '&quot;')}"></div>`
+          ).join('');
+          card.innerHTML = `
+            <div class="worker-header">
+              <span class="worker-name">${worker.hostname}</span>
+              <span class="worker-health ${worker.health}">${worker.health}</span>
+            </div>
+            <div class="worker-metrics">
+              <div class="worker-metric completed"><span class="value">${worker.totalTasksExecuted}</span><span class="label">Tasks completed</span></div>
+              <div class="worker-metric slots"><span class="value">${worker.availableSlots}/${worker.totalSlots}</span><span class="label">Slots free</span></div>
+            </div>
+            <div class="tasks-section">
+              <div class="tasks-section-title">Current slots (running = blue, idle = gray)</div>
+              <div class="tasks-box">${taskDots}</div>
+            </div>
+            <button class="kill-btn" data-worker-id="${worker.id}">KILL NODE</button>
+          `;
+          card.querySelector('.kill-btn').addEventListener('click', function () {
+            killWorker(worker.id, this);
+          });
+        }
+        workerGrid.appendChild(card);
+      }
+    }
+
+    function killWorker(workerId, btn) {
+      if (btn.disabled) return;
+      btn.disabled = true;
+      btn.textContent = 'Killing...';
+      fetch(apiBase + '/' + encodeURIComponent(workerId) + '/kill', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+        .then(function (res) {
+          if (res.ok) btn.textContent = 'Killed';
+          else { btn.disabled = false; btn.textContent = 'KILL NODE'; }
+        })
+        .catch(function () { btn.disabled = false; btn.textContent = 'KILL NODE'; });
+    }
+  </script>
+</body>
+</html>
