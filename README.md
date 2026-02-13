@@ -4,10 +4,10 @@
 
 ---
 
-## 🎥 Live Demo (30s Preview)
+## 🎥 Live Demo (Short Preview)
 Watch the **Fault Tolerance** in action: notice how tasks automatically reschedule when a node is killed.
 
-<video src="[PASTE YOUR SHORT VIDEO LINK HERE]" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
+<video src="(https://github.com/Baseer-C/Spark-Viz/issues/2#issue-3938418243)" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
 
 > **[📺 Click here to watch the Full Narrated Walkthrough (Deep Dive)]( (https://github.com/Baseer-C/Spark-Viz/issues/1#issue-3938401092) )**
 > *See the full DAG visualization, straggler simulation, and worker lifecycle management.*
