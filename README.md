@@ -5,8 +5,7 @@
 ---
 
 ## 🎥 Live Demo (Short Preview)
-Watch the **Fault Tolerance** in action: notice how tasks automatically reschedule when a node is killed.
-
+**Cluster Lifecycle in Action:** Watch as I submit dynamic jobs, **horizontally scale** the cluster by adding a new node, and validate **fault tolerance** by terminating an active worker.
 <video src="https://github.com/user-attachments/assets/cf50098b-f276-490d-875a-2535fc8b5874" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
 
 > **[📺 Click here to watch the Full Walkthrough (Deep Dive)](https://github.com/user-attachments/assets/2027cd99-bfb0-44c9-a5ad-d41b9459ff12)**
