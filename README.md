@@ -1,169 +1,93 @@
-# Distributed Compute Engine Simulation
+# ⚡ Distributed Compute Engine (Mini-Spark)
 
-A simplified Apache Spark-like distributed compute engine simulation built with Java and Spring Boot.
+> A resilient, distributed DAG (Directed Acyclic Graph) execution engine built with Java, Spring Boot, and WebSockets. Designed to simulate fault tolerance, concurrent task scheduling, and real-time cluster monitoring.
 
-## Architecture Overview
+---
 
-This project simulates a DAG (Directed Acyclic Graph) execution engine with the following core components:
+## 🎥 Live Demo (30s Preview)
+Watch the **Fault Tolerance** in action: notice how tasks automatically reschedule when a node is killed.
 
-### Core Domain Models
+<video src="[PASTE YOUR SHORT VIDEO LINK HERE]" controls="controls" muted="muted" autoplay="autoplay" loop="loop" style="max-width: 100%;"></video>
 
-1. **Task** (`com.distributed.compute.model.Task`)
-   - Represents a unit of work
-   - Has unique ID, status (PENDING, RUNNING, COMPLETED, FAILED), and duration
-   - Uses `AtomicReference` for thread-safe status management
-   - Simulates work via `Thread.sleep()`
+> **[📺 Click here to watch the Full Narrated Walkthrough (Deep Dive)]( [PASTE YOUR FULL VIDEO LINK HERE] )**
+> *See the full DAG visualization, straggler simulation, and worker lifecycle management.*
 
-2. **Stage** (`com.distributed.compute.model.Stage`)
-   - Groups independent Tasks that can run in parallel
-   - Uses `ConcurrentHashMap` for O(1) task lookup
-   - Uses `AtomicInteger` for completion tracking
+---
 
-3. **Job** (`com.distributed.compute.model.Job`)
-   - Contains Stages that must execute sequentially
-   - Stage N+1 cannot start until Stage N completes
-   - Uses `ConcurrentHashMap` for stage management
-   - Uses `AtomicReference` for current stage tracking
+## 🚀 Key Features
 
-4. **WorkerNode** (`com.distributed.compute.cluster.WorkerNode`)
-   - Simulates a server with a fixed number of execution slots
-   - Uses `ThreadPoolExecutor` for concurrent task execution
-   - Uses `ConcurrentHashMap` to track running tasks
-   - Uses `AtomicInteger` for slot availability tracking
+### 1. Visualized Fault Tolerance ("The Chaos Monkey")
+* **Feature:** Instantly kill any worker node to simulate hardware failure.
+* **Outcome:** The `ClusterManager` detects the heartbeat failure, marks the node as `DEAD`, and strictly re-queues all incomplete tasks to healthy nodes without data loss.
 
-5. **ClusterManager** (`com.distributed.compute.cluster.ClusterManager`)
-   - Central coordinator ("brain") of the cluster
-   - Manages all WorkerNodes and assigns Tasks to available slots
-   - Uses `ConcurrentHashMap` for worker and job state management
-   - Implements round-robin scheduling for load balancing
+### 2. DAG Task Execution
+* **Logic:** Jobs are broken into **Stages** (sequential) and **Tasks** (parallel).
+* **Dependency:** Stage `N+1` cannot begin until all tasks in Stage `N` are completed (Barriers).
+* **Visualization:** Real-time DAG rendering at the bottom of the dashboard shows stage progression and bottlenecks.
 
-## Thread Safety Design
+### 3. Resource-Aware Scheduling
+* **Constraint:** Tasks are not just assigned to open threads; they are scheduled based on simulated **CPU & Memory constraints**.
+* **Algorithm:** Implements a custom bin-packing strategy to ensure efficient cluster utilization.
 
-All components are designed for concurrent access:
+---
 
-- **ConcurrentHashMap**: Used throughout for O(1) lookups with fine-grained locking
-- **AtomicReference**: Used for single-value state updates (e.g., Task status, current stage)
-- **AtomicInteger**: Used for counters (completion counts, slot availability)
-- **Synchronized Collections**: Used for thread-safe iteration where needed
+## 🛠️ Tech Stack
 
-## Key Design Decisions
+* **Core:** Java 17, Spring Boot
+* **Concurrency:** `ConcurrentHashMap`, `AtomicInteger`, `ThreadPoolExecutor`
+* **Real-Time:** WebSockets (STOMP), Spring Messaging
+* **Frontend:** HTML5, CSS Grid (Dark Mode), JavaScript (No frameworks, pure DOM manipulation)
+* **Testing:** JUnit 5, Mockito (80+ Unit Tests)
 
-1. **ConcurrentHashMap over synchronized HashMap**: Provides better concurrent performance with fine-grained locking
-2. **AtomicReference for status**: Enables lock-free status transitions using compare-and-set semantics
-3. **ThreadPoolExecutor**: Handles thread lifecycle and provides built-in queue management
-4. **Round-robin scheduling**: Ensures fair distribution of tasks across workers
+---
 
-## Building and Running
+## 🏗 System Architecture
 
-### Build the Project
+The system follows a classic **Master-Worker** architecture:
 
-```bash
-# Build the project (compiles and runs tests)
-mvn clean install
+1.  **ClusterManager (The "Brain"):**
+    * Holds the global state of the cluster.
+    * manages the `JobQueue` and `TaskScheduler`.
+    * Broadcasts state updates to the UI via WebSockets every 500ms.
+2.  **WorkerNodes (The "Muscle"):**
+    * Independent threads simulating distributed servers.
+    * Each node has a fixed slot capacity (CPU cores).
+    * Executes tasks with simulated duration (using `Thread.sleep`).
+3.  **The Communication Layer:**
+    * Nodes report status updates (COMPLETED, FAILED) back to the Manager.
+    * Manager pushes "Heartbeat" checks to ensure nodes are alive.
 
-# Build without running tests
-mvn clean install -DskipTests
-```
+---
 
-### Run the Application
+## 🚀 How to Run
 
-```bash
-# Run the Spring Boot application (includes demo)
-mvn spring-boot:run
-```
+### Prerequisites
+* Java 17+
+* Maven 3.6+
 
-When you run the application, it will automatically execute a demo that:
-- Creates 3 worker nodes with 4 slots each
-- Submits a sample job with 4 stages
-- Monitors job execution progress
-- Displays final statistics
+### Steps
+1.  **Build the project:**
+    ```bash
+    mvn clean install
+    ```
+2.  **Run the application:**
+    ```bash
+    mvn spring-boot:run
+    ```
+3.  **Open the Dashboard:**
+    * Go to: `http://localhost:8080`
+    * Click **"Run Job"** to start the simulation.
+    * Click **"Kill Node"** on any worker to test resilience.
 
-### Run Unit Tests
+---
+
+## 🧪 Testing
+
+The project includes a full suite of unit and integration tests covering the scheduling logic and concurrency safety.
 
 ```bash
 # Run all tests
 mvn test
 
-# Run specific test class
-mvn test -Dtest=TaskTest
-
-# Run tests with verbose output
-mvn test -X
-```
-
-### Test Coverage
-
-The project includes comprehensive unit tests:
-
-- **TaskTest**: Tests Task lifecycle, status transitions, and thread safety
-- **StageTest**: Tests Stage management, task grouping, and completion tracking
-- **JobTest**: Tests Job execution, sequential stage processing, and state management
-- **WorkerNodeTest**: Tests worker node task execution, slot management, and statistics
-- **ClusterManagerTest**: Tests cluster coordination, job submission, and scheduling
-- **IntegrationTest**: Tests end-to-end job execution across multiple workers
-
-All tests use JUnit 5 and are located in `src/test/java/`.
-
-## Project Structure
-
-```
-src/main/java/com/distributed/compute/
-├── DistributedComputeApplication.java  # Spring Boot entry point
-├── model/
-│   ├── Task.java                       # Task domain model
-│   ├── TaskStatus.java                 # Task status enumeration
-│   ├── Stage.java                      # Stage domain model
-│   └── Job.java                        # Job domain model
-├── cluster/
-│   ├── WorkerNode.java                 # Worker node implementation
-│   └── ClusterManager.java             # Cluster coordinator
-└── demo/
-    └── ComputeEngineDemo.java          # Demo/example implementation
-
-src/test/java/com/distributed/compute/
-├── model/
-│   ├── TaskTest.java                   # Task unit tests
-│   ├── StageTest.java                  # Stage unit tests
-│   └── JobTest.java                    # Job unit tests
-└── cluster/
-    ├── WorkerNodeTest.java             # WorkerNode unit tests
-    ├── ClusterManagerTest.java         # ClusterManager unit tests
-    └── IntegrationTest.java           # End-to-end integration tests
-```
-
-## Usage Example
-
-```java
-// Create worker nodes
-WorkerNode worker1 = new WorkerNode("worker-1", 4); // 4 slots
-WorkerNode worker2 = new WorkerNode("worker-2", 4);
-
-// Register workers with cluster manager
-clusterManager.registerWorker(worker1);
-clusterManager.registerWorker(worker2);
-
-// Create a job with stages
-Job job = new Job("Example Job");
-
-// Create stage 1 with parallel tasks
-Stage stage1 = new Stage("Stage 1");
-stage1.addTask(new Task(1000, "Task 1-1"));
-stage1.addTask(new Task(1500, "Task 1-2"));
-stage1.addTask(new Task(2000, "Task 1-3"));
-job.addStage(stage1);
-
-// Create stage 2 (runs after stage 1 completes)
-Stage stage2 = new Stage("Stage 2");
-stage2.addTask(new Task(1000, "Task 2-1"));
-stage2.addTask(new Task(1000, "Task 2-2"));
-job.addStage(stage2);
-
-// Submit job for execution
-clusterManager.submitJob(job);
-```
-
-## Requirements
-
-- Java 17+
-- Maven 3.6+
-- Spring Boot 3.2.0
+# Run specific concurrency test
+mvn test -Dtest=ClusterManagerTest
