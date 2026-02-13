@@ -197,6 +197,121 @@
     }
     .kill-btn:hover { background: var(--kill-hover); }
     .kill-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .run-job-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      max-width: 1400px;
+    }
+    .run-job-section h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .run-job-form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-group label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      width: 100%;
+      min-width: 80px;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .run-job-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .run-job-btn:hover { background: #5558e3; }
+    .run-job-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .run-job-msg {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      min-height: 1.2em;
+    }
+    .run-job-msg.success { color: var(--completed); }
+    .run-job-msg.error { color: var(--failed); }
+
+    .dag-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      max-width: 1400px;
+    }
+    .dag-section h2 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .dag-diagram {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      min-height: 60px;
+    }
+    .dag-stage {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dag-node {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.8rem;
+      text-align: center;
+      min-width: 80px;
+    }
+    .dag-node.pending { border-color: var(--pending); color: var(--muted); }
+    .dag-node.running { border-color: var(--running); background: rgba(59,130,246,0.15); color: var(--text); }
+    .dag-node.completed { border-color: var(--completed); background: rgba(34,197,94,0.12); color: var(--completed); }
+    .dag-node .dag-node-title { font-weight: 600; display: block; }
+    .dag-node .dag-node-count { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
+    .dag-arrow {
+      color: var(--muted);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .dag-empty {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -241,13 +356,43 @@
     <span class="legend-item"><span class="legend-dot FAILED"></span> Failed</span>
   </div>
 
+  <div class="run-job-section">
+    <h2>Run new job</h2>
+    <form class="run-job-form" id="runJobForm">
+      <div class="form-group">
+        <label for="jobDesc">Description</label>
+        <input type="text" id="jobDesc" placeholder="My job" value="">
+      </div>
+      <div class="form-group">
+        <label for="stageCount">Stages</label>
+        <input type="number" id="stageCount" min="1" max="20" value="3">
+      </div>
+      <div class="form-group">
+        <label for="tasksPerStage">Tasks per stage</label>
+        <input type="number" id="tasksPerStage" min="1" max="32" value="4">
+      </div>
+      <div class="form-group">
+        <label for="taskDurationMs">Task duration (ms)</label>
+        <input type="number" id="taskDurationMs" min="100" max="30000" value="1000">
+      </div>
+      <button type="submit" class="run-job-btn" id="runJobBtn">Run job</button>
+    </form>
+    <p id="runJobMsg" class="run-job-msg"></p>
+  </div>
+
   <div class="grid" id="workerGrid"></div>
+
+  <div class="dag-section">
+    <h2>Job DAG</h2>
+    <div class="dag-diagram" id="dagDiagram"></div>
+  </div>
 
   <script>
     const baseUrl = (window.location.origin && window.location.origin.startsWith('http'))
       ? window.location.origin
       : 'http://localhost:8080';
     const apiBase = baseUrl + '/api/workers';
+    const jobsApiBase = baseUrl + '/api/jobs';
 
     const statusEl = document.getElementById('status');
     const workerGrid = document.getElementById('workerGrid');
@@ -257,6 +402,8 @@
     const runningTasksEl = document.getElementById('runningTasks');
     const totalJobsEl = document.getElementById('totalJobs');
     const slotsEl = document.getElementById('slots');
+    const dagDiagramEl = document.getElementById('dagDiagram');
+    const runJobMsgEl = document.getElementById('runJobMsg');
 
     let previousCompletedByWorker = {};
 
@@ -292,6 +439,8 @@
 
       const workers = state.workers || [];
       workerGrid.innerHTML = '';
+
+      renderDag(state.dag);
 
       for (let i = 0; i < 4; i++) {
         const worker = workers[i];
@@ -356,6 +505,75 @@
         })
         .catch(function () { btn.disabled = false; btn.textContent = 'KILL NODE'; });
     }
+
+    function renderDag(dag) {
+      if (!dagDiagramEl) return;
+      if (!dag || !dag.stages || dag.stages.length === 0) {
+        dagDiagramEl.innerHTML = '<span class="dag-empty">No job data yet. Run a job to see the DAG.</span>';
+        return;
+      }
+      const stages = dag.stages;
+      let html = '';
+      for (let i = 0; i < stages.length; i++) {
+        const s = stages[i];
+        const state = s.completed ? 'completed' : (i === 0 || (i > 0 && stages[i - 1].completed) ? 'running' : 'pending');
+        html += '<div class="dag-stage">';
+        html += '<div class="dag-node ' + state + '">';
+        html += '<span class="dag-node-title">' + escapeHtml(s.description || ('Stage ' + (i + 1))) + '</span>';
+        html += '<span class="dag-node-count">' + s.completedCount + ' / ' + s.taskCount + '</span>';
+        html += '</div>';
+        if (i < stages.length - 1) {
+          html += '<span class="dag-arrow">→</span>';
+        }
+        html += '</div>';
+      }
+      dagDiagramEl.innerHTML = html;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    document.getElementById('runJobForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const desc = document.getElementById('jobDesc').value.trim();
+      const stageCount = Math.max(1, parseInt(document.getElementById('stageCount').value, 10) || 3);
+      const tasksPerStage = Math.max(1, parseInt(document.getElementById('tasksPerStage').value, 10) || 4);
+      const taskDurationMs = Math.max(100, parseInt(document.getElementById('taskDurationMs').value, 10) || 1000);
+      const stages = [];
+      for (let i = 0; i < stageCount; i++) {
+        stages.push({ taskCount: tasksPerStage, taskDurationMs: taskDurationMs });
+      }
+      const btn = document.getElementById('runJobBtn');
+      runJobMsgEl.textContent = '';
+      runJobMsgEl.className = 'run-job-msg';
+      btn.disabled = true;
+      fetch(jobsApiBase + '/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ description: desc || undefined, stages: stages })
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            if (res.ok && data.success) {
+              runJobMsgEl.textContent = 'Job submitted: ' + (data.description || data.jobId);
+              runJobMsgEl.className = 'run-job-msg success';
+            } else {
+              runJobMsgEl.textContent = data.message || 'Submit failed';
+              runJobMsgEl.className = 'run-job-msg error';
+            }
+          });
+        })
+        .catch(function () {
+          runJobMsgEl.textContent = 'Network error';
+          runJobMsgEl.className = 'run-job-msg error';
+        })
+        .finally(function () {
+          btn.disabled = false;
+        });
+    });
   </script>
 </body>
 </html>

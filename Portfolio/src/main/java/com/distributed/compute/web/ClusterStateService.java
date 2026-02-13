@@ -2,9 +2,13 @@ package com.distributed.compute.web;
 
 import com.distributed.compute.cluster.ClusterManager;
 import com.distributed.compute.cluster.WorkerNode;
+import com.distributed.compute.model.Job;
+import com.distributed.compute.model.Stage;
 import com.distributed.compute.model.Task;
 import com.distributed.compute.model.TaskStatus;
 import com.distributed.compute.web.dto.ClusterStateDto;
+import com.distributed.compute.web.dto.JobDagDto;
+import com.distributed.compute.web.dto.StageDagDto;
 import com.distributed.compute.web.dto.TaskStateDto;
 import com.distributed.compute.web.dto.WorkerNodeStateDto;
 import org.springframework.stereotype.Service;
@@ -41,6 +45,8 @@ public class ClusterStateService {
             totalCompleted += w.getTotalTasksExecuted();
         }
 
+        JobDagDto dag = buildDag();
+
         return new ClusterStateDto(
                 System.currentTimeMillis(),
                 pendingCount,
@@ -50,8 +56,37 @@ public class ClusterStateService {
                 totalSlots,
                 availableSlots,
                 runningTasks,
-                workers
+                workers,
+                dag
         );
+    }
+
+    /**
+     * Build DAG summary from the most recently active job (non-completed first, else last).
+     */
+    private JobDagDto buildDag() {
+        List<Job> allJobs = clusterManager.getAllJobs();
+        if (allJobs.isEmpty()) {
+            return null;
+        }
+        Job job = allJobs.stream()
+                .filter(j -> !j.isCompleted())
+                .findFirst()
+                .orElse(allJobs.get(allJobs.size() - 1));
+
+        List<Stage> stageList = job.getStages();
+        List<StageDagDto> stageDtos = new ArrayList<>();
+        for (int i = 0; i < stageList.size(); i++) {
+            Stage s = stageList.get(i);
+            stageDtos.add(new StageDagDto(
+                    i,
+                    s.getDescription(),
+                    s.getTaskCount(),
+                    s.getCompletedTaskCount(),
+                    s.isCompleted()
+            ));
+        }
+        return new JobDagDto(job.getId(), job.getDescription(), stageDtos);
     }
 
     private WorkerNodeStateDto buildWorkerState(WorkerNode w) {

@@ -14,5 +14,6 @@ public record ClusterStateDto(
     int totalSlots,
     int availableSlots,
     int runningTasks,
-    List<WorkerNodeStateDto> workers
+    List<WorkerNodeStateDto> workers,
+    JobDagDto dag
 ) {}
