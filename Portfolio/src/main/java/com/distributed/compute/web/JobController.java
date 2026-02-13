@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.Random;
 
 /**
  * REST controller for submitting jobs from the UI.
@@ -38,14 +39,27 @@ public class JobController {
             ? request.description()
             : "Job-" + System.currentTimeMillis();
 
+        boolean simulateDataSkew = Boolean.TRUE.equals(request.simulateDataSkew());
+        int stragglerStageIndex = 1; // Stage 2 (0-based)
+        int stragglerTaskDurationMs = 10_000;
+
         Job job = new Job(description);
+        Random rng = new Random();
         for (int i = 0; i < request.stages().size(); i++) {
             SubmitJobRequest.StageSpec spec = request.stages().get(i);
             int taskCount = Math.max(1, spec.taskCount());
             int durationMs = spec.taskDurationMs() > 0 ? spec.taskDurationMs() : 1000;
             Stage stage = new Stage("Stage " + (i + 1));
+
+            int stragglerTaskIndex = -1;
+            if (simulateDataSkew && i == stragglerStageIndex && request.stages().size() > stragglerStageIndex) {
+                stragglerTaskIndex = rng.nextInt(taskCount);
+            }
+
             for (int t = 0; t < taskCount; t++) {
-                stage.addTask(new Task(durationMs, "Task " + (t + 1)));
+                int taskDuration = (t == stragglerTaskIndex) ? stragglerTaskDurationMs : durationMs;
+                String taskDesc = (t == stragglerTaskIndex) ? "Task " + (t + 1) + " (straggler)" : "Task " + (t + 1);
+                stage.addTask(new Task(taskDuration, taskDesc));
             }
             job.addStage(stage);
         }

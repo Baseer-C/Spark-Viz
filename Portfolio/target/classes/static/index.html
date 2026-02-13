@@ -242,6 +242,29 @@
       outline: none;
       border-color: var(--accent);
     }
+    .form-group-checkbox {
+      justify-content: flex-end;
+    }
+    .form-group-checkbox .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .form-group-checkbox input[type="checkbox"] {
+      width: auto;
+      min-width: 0;
+      accent-color: var(--accent);
+    }
+    .form-hint {
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: block;
+      margin-top: 0.2rem;
+    }
     .run-job-btn {
       padding: 0.6rem 1.25rem;
       font-size: 0.95rem;
@@ -374,6 +397,13 @@
       <div class="form-group">
         <label for="taskDurationMs">Task duration (ms)</label>
         <input type="number" id="taskDurationMs" min="100" max="30000" value="1000">
+      </div>
+      <div class="form-group form-group-checkbox">
+        <label class="checkbox-label">
+          <input type="checkbox" id="simulateDataSkew" name="simulateDataSkew">
+          <span>Simulate Data Skew</span>
+        </label>
+        <span class="form-hint">One random task in Stage 2 runs 10s (straggler)</span>
       </div>
       <button type="submit" class="run-job-btn" id="runJobBtn">Run job</button>
     </form>
@@ -546,6 +576,7 @@
       for (let i = 0; i < stageCount; i++) {
         stages.push({ taskCount: tasksPerStage, taskDurationMs: taskDurationMs });
       }
+      const simulateDataSkew = document.getElementById('simulateDataSkew').checked;
       const btn = document.getElementById('runJobBtn');
       runJobMsgEl.textContent = '';
       runJobMsgEl.className = 'run-job-msg';
@@ -553,7 +584,7 @@
       fetch(jobsApiBase + '/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ description: desc || undefined, stages: stages })
+        body: JSON.stringify({ description: desc || undefined, stages: stages, simulateDataSkew: simulateDataSkew })
       })
         .then(function (res) {
           return res.json().then(function (data) {
